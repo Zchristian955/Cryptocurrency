@@ -29,9 +29,9 @@ st.set_page_config(layout="wide")
 
 
 
-image = Image.open('cr.jpg')
+#image = Image.open('cr.jpg')
 
-st.image(image, width = 700)
+#st.image(image, width = 700)
 
 st.title('Crypto Price Application')
 st.markdown("""
