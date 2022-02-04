@@ -198,7 +198,7 @@ if selected == "Forcasting":
     def load_data():
         # ccreate api instance of the v2 API
 
-        api_v2 = bitfinex.bitfinex_v1.api_v1()
+        api_v2 = bitfinex.bitfinex_v2.api_v2()
         # define query parameters
 
         pair = 'ETHUSD'
