@@ -29,9 +29,9 @@ st.set_page_config(layout="wide")
 
 
 
-#image = Image.open('cr.jpg')
+image = Image.open('cr.jpg')
 
-#st.image(image, width = 700)
+st.image(image, width = 700)
 
 st.title('Crypto Price Application')
 st.markdown("""
@@ -195,119 +195,9 @@ if selected == "Home":
 
 
 if selected == "Forcasting":
-    def load_data():
-        # ccreate api instance of the v2 API
-
-        api_v2 = bitfinex.bitfinex_v2.api_v2()
-        # define query parameters
-
-        pair = 'ETHUSD'
-        TIMEFRAME = "1h"
-
-        # define the start date
-        t_start = datetime.datetime(2020, 9, 1, 0, 0)
-        t_start = time.mktime(t_start.timetuple()) * 1000
-
-        # define the end datee
-
-        t_stop = datetime.datetime(2020, 10, 1, 0, 0)
-        t_stop = time.mktime(t_stop.timetuple()) * 1000
-
-        # Download OHCL data form API
-        # result = api_v2.candles(symbol= pair,interval =TIMEFRAME,limit=1000,
-        #                        start=t_start,end=t_stop)
-        result = api_v2.candles(symbol=pair, interval=TIMEFRAME, limit=1000,
-                                start=t_start, end=t_stop)
-
-        # convert list to data pandas datframe
-
-        names = ['Date', 'ETH_Open', 'ETH_Close', 'ETH_High', 'ETH_Low', 'ETH_Volume']
-        df = pd.DataFrame(result, columns=names)
-        df['Date'] = pd.to_datetime(df['Date'], unit='ms')
-
-        return df
 
 
-    data1 = load_data()
-
-
-    # BTC
-
-    def load_data():
-        # ccreate api instance of the v2 API
-
-        api_v2 = bitfinex.api_v2()
-        # define query parameters
-
-        pair = 'BTCUSD'
-        TIMEFRAME = "1h"
-
-        # define the start date
-        t_start = datetime.datetime(2020, 9, 1, 0, 0)
-        t_start = time.mktime(t_start.timetuple()) * 1000
-
-        # define the end datee
-
-        t_stop = datetime.datetime(2020, 10, 1, 0, 0)
-        t_stop = time.mktime(t_stop.timetuple()) * 1000
-
-        # Download OHCL data form API
-        # result = api_v2.candles(symbol= pair,interval =TIMEFRAME,limit=1000,
-        #                        start=t_start,end=t_stop)
-        result = api_v2.candles(symbol=pair, interval=TIMEFRAME, limit=1000,
-                                start=t_start, end=t_stop)
-
-        # convert list to data pandas datframe
-
-        names = ['Date', 'BTC_Open', 'BTC_Close', 'BTC_High', 'BTC_Low', 'BTC_Volume']
-        df = pd.DataFrame(result, columns=names)
-        df['Date'] = pd.to_datetime(df['Date'], unit='ms')
-
-        return df
-
-
-    data2 = load_data()
-
-
-    # DOGE
-
-    def load_data():
-        # ccreate api instance of the v2 API
-
-        api_v2 = bitfinex.bitfinex_v2.api_v2()
-        # define query parameters
-
-        pair = 'LTCUSD'
-        TIMEFRAME = "1h"
-
-        # define the start date
-        t_start = datetime.datetime(2020, 9, 1, 0, 0)
-        t_start = time.mktime(t_start.timetuple()) * 1000
-
-        # define the end datee
-
-        t_stop = datetime.datetime(2020, 10, 1, 0, 0)
-        t_stop = time.mktime(t_stop.timetuple()) * 1000
-
-        # Download OHCL data form API
-        # result = api_v2.candles(symbol= pair,interval =TIMEFRAME,limit=1000,
-        #                        start=t_start,end=t_stop)
-        result = api_v2.candles(symbol=pair, interval=TIMEFRAME, limit=1000,
-                                start=t_start, end=t_stop)
-
-        # convert list to data pandas datframe
-
-        names = ['Date', 'LTC_Open', 'LTC_Close', 'LTC_High', 'LTC_Low', 'LTC_Volume']
-        df = pd.DataFrame(result, columns=names)
-        df['Date'] = pd.to_datetime(df['Date'], unit='ms')
-
-        return df
-
-
-    data3 = load_data()
-
-    final_data = pd.merge(data1, data2, on=["Date", "Date"])
-    final_data1 = pd.merge(final_data, data3, on=["Date", "Date"])
+    final_data1 = pd.read_csv('C:/Users/hp/Documents/pythonProject/data/data1.csv')
     final_data2 = final_data1.head(25)
     st.dataframe(final_data2)
 
@@ -438,6 +328,16 @@ if selected == "Forcasting":
 if selected =="About us":
     st.info("Information")
     st.info("Goal")
+
+
+
+
+
+
+
+
+
+
 
 
 
