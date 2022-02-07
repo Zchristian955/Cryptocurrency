@@ -235,7 +235,7 @@ if selected == "Forcasting":
     height = st.sidebar.slider("plot height", 0.1, 25., 1.)
     fig, ax = plt.subplots(figsize=(width, height))
     daily_vol = final_data3.pct_change().apply(lambda x: np.log(1 + x)).std()*100
-    daily_vol.plot(kind='bar')
+    daily_vol.plot(kind='bar',figsize=(20, 9))
     #final_data3 =pd.DataFrame(final_data3,columns='volatility')
     #st.dataframe(final_data3)
     #ax.bar(langs, students)
