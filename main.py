@@ -213,17 +213,17 @@ if selected == "Forcasting":
     st.header('**BTC**')
     st.set_option('deprecation.showPyplotGlobalUse', False)
     final_data1 = final_data1.set_index('Date')
-    final_data1[['BTC_Open', 'BTC_Close', 'BTC_High', 'BTC_Low']].plot(figsize=(8, 5))
+    final_data1[['BTC_Open', 'BTC_Close', 'BTC_High', 'BTC_Low']].plot(figsize=(20, 7))
     st.pyplot()
 
     st.header('**ETH**')
     #final_data1 = final_data1.set_index('Date')
-    final_data1[['ETH_Open', 'ETH_Close', 'ETH_High', 'ETH_Low']].plot(figsize=(8, 5))
+    final_data1[['ETH_Open', 'ETH_Close', 'ETH_High', 'ETH_Low']].plot(figsize=(20, 7))
     st.pyplot()
 
     st.header('**LTC**')
     #final_data1 = final_data1.set_index('Date')
-    final_data1[['LTC_Open', 'LTC_Close', 'LTC_High', 'LTC_Low']].plot(figsize=(8, 5))
+    final_data1[['LTC_Open', 'LTC_Close', 'LTC_High', 'LTC_Low']].plot(figsize=(20, 7))
     st.pyplot()
 
 
