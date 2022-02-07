@@ -262,7 +262,7 @@ if selected == "Forcasting":
     final_data5 = final_data3.pct_change().apply(lambda x: np.log(1 + x))
     day= 20
     vol = final_data5.rolling(window=day).std()*np.sqrt(day)
-    vol.plot()
+    vol.plot(figsize=(20, 9))
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.pyplot()
 
