@@ -197,7 +197,7 @@ if selected == "Home":
 if selected == "Forcasting":
 
 
-    final_data1 = pd.read_csv('C:/Users/hp/Documents/pythonProject/data/data1.csv')
+    final_data1 = pd.read_csv('data/data1.csv')
     final_data2 = final_data1.head(25)
     st.dataframe(final_data2)
 
