@@ -211,6 +211,7 @@ if selected == "Forcasting":
 
     st.header('Financial Plots')
     st.header('**BTC**')
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     final_data1 = final_data1.set_index('Date')
     final_data1[['BTC_Open', 'BTC_Close', 'BTC_High', 'BTC_Low']].plot(figsize=(8, 5))
     st.pyplot()
